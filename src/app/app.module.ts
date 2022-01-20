@@ -7,10 +7,17 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
+    path: 'contactmanager',
+    loadChildren: () =>
+      import('./contactmanager/contactmanager.module').then(
+        (x) => x.ContactManagerModule
+      ),
+  },
+  {
     path: 'demo',
     loadChildren: () => import('./demo/demo.module').then((x) => x.DemoModule),
   },
-  { path: '**', redirectTo: 'demo' },
+  { path: '**', redirectTo: 'contactmanager' },
 ];
 
 @NgModule({
