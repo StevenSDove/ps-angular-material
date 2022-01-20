@@ -7,9 +7,11 @@
   >
     <mat-toolbar color="primary"> Contacts </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item *ngFor="let user of users | async">
-        <mat-icon [svgIcon]="user.avatar"></mat-icon> {{ user.name }}
-      </a>
+      <mat-list-item *ngFor="let user of users | async">
+        <a matLine [routerLink]="['/contactmanager', user.id]">
+          <mat-icon [svgIcon]="user.avatar"></mat-icon> {{ user.name }}
+        </a>
+      </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
 

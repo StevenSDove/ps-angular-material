@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { User } from '../models/user';
 
 @Injectable()
@@ -19,7 +19,7 @@ export class UserService {
     return this._users.asObservable();
   }
 
-  loadAll() {
+  loadAll(): Subscription {
     const usersUrl = 'https://angular-material-api.azurewebsites.net/users';
 
     return this.http.get<User[]>(usersUrl).subscribe({
@@ -30,5 +30,9 @@ export class UserService {
       },
       error: (err) => console.log('Failed to fetch users', err),
     });
+  }
+
+  userById(id: number): User {
+    return this.dataStore.users.find((x) => x.id == id);
   }
 }
