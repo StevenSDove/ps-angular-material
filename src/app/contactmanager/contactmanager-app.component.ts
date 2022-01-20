@@ -10,9 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class ContactManagerAppComponent implements OnInit {
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIconSet(
-      sanitizer.bypassSecurityTrustResourceUrl(
-        'https://stackblitz.com/files/sdove-ps-angular-material/github/StevenSDove/ps-angular-material/master/src/asets/avatars.svg'
-      )
+      sanitizer.bypassSecurityTrustResourceUrl('assets/avatars.svg')
     );
   }
 
