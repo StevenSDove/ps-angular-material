@@ -10,6 +10,8 @@ import { ContactManagerAppComponent } from './contactmanager-app.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
+import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -26,6 +28,7 @@ const routes: Routes = [
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forChild(routes),
   ],
   declarations: [
@@ -34,5 +37,6 @@ const routes: Routes = [
     SidenavComponent,
     MainContentComponent,
   ],
+  providers: [UserService],
 })
 export class ContactManagerModule {}
