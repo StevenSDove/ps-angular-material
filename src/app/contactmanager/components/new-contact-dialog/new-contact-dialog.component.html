@@ -20,14 +20,30 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
+      <mat-label>Birth Date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="datePicker"
+        [(ngModel)]="user.birthDate"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="datePicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #datePicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
       <mat-label>Bio</mat-label>
       <textarea matInput [(ngModel)]="user.bio"></textarea>
     </mat-form-field>
   </div>
 </mat-dialog-content>
-
+<p *ngIf="errorMessage">
+  <mat-error>{{ errorMessage }}</mat-error>
+</p>
 <mat-dialog-actions>
-  <button mat-button color="primary" (click)="save()">
+  <button mat-button color="primary" (click)="save()" [disabled]="saving">
     <mat-icon>save</mat-icon> save
   </button>
   <button mat-button color="primary" (click)="dismiss()">
