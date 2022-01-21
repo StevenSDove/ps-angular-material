@@ -18,7 +18,7 @@ import { Note } from '../../models/note';
 export class NotesComponent implements OnInit, AfterViewInit {
   @Input() notes: Note[];
 
-  displayedColumns: string[] = ['position', 'title', 'date'];
+  displayedColumns: string[] = ['id', 'title', 'date'];
   dataSource: MatTableDataSource<Note>;
 
   constructor() {}
