@@ -9,3 +9,6 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
+@use '@angular/material' as mat
+@include mat.core()

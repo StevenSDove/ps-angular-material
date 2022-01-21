@@ -5,7 +5,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-contact-manager',
   templateUrl: './contactmanager-app.component.html',
-  styleUrls: ['./contactmanager-app.component.css'],
+  styleUrls: ['./contactmanager-app.component.scss'],
 })
 export class ContactManagerAppComponent implements OnInit {
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {

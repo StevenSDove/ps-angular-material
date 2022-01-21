@@ -13,7 +13,7 @@ import { Note } from '../../models/note';
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
-  styleUrls: ['./notes.component.css'],
+  styleUrls: ['./notes.component.scss'],
 })
 export class NotesComponent implements OnInit, AfterViewInit {
   @Input() notes: Note[];
