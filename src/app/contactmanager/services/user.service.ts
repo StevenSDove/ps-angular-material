@@ -52,7 +52,7 @@ export class UserService {
         this.dataStore.users.push(user);
         this.notifyUsersUpdated();
         observer.next(user);
-      }, 1000);
+      }, 500);
     });
   }
 }
