@@ -17,6 +17,7 @@ export class SidenavComponent implements OnInit {
   public isScreenSmall: boolean = false;
 
   users: Observable<User[]>;
+  isDarkTheme: boolean = false;
 
   @ViewChild(MatSidenav) sidenav: MatSidenav;
 
@@ -25,6 +26,10 @@ export class SidenavComponent implements OnInit {
     private userService: UserService,
     private router: Router
   ) {}
+
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+  }
 
   ngOnInit() {
     this.breakpointObserver
