@@ -25,3 +25,7 @@ mat-icon {
   line-height: var(--iconWidth);
   color: white;
 }
+
+.spacer {
+  flex: 1 1 auto;
+}
