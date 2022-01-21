@@ -18,6 +18,7 @@ export class SidenavComponent implements OnInit {
 
   users: Observable<User[]>;
   isDarkTheme: boolean = false;
+  reverse: boolean = false;
 
   @ViewChild(MatSidenav) sidenav: MatSidenav;
 
@@ -29,6 +30,10 @@ export class SidenavComponent implements OnInit {
 
   toggleTheme() {
     this.isDarkTheme = !this.isDarkTheme;
+  }
+
+  toggleDirection() {
+    this.reverse = !this.reverse;
   }
 
   ngOnInit() {

@@ -1,6 +1,7 @@
 <mat-sidenav-container
   class="app-sidenav-container"
   [class.dark-theme]="isDarkTheme"
+  [dir]="reverse ? 'rtl' : 'ltr'"
 >
   <mat-sidenav
     #sidenav
@@ -22,6 +23,7 @@
     <app-toolbar
       (toggleSidenav)="sidenav.toggle()"
       (toggleTheme)="toggleTheme()"
+      (toggleDirection)="toggleDirection()"
     ></app-toolbar>
     <div class="wrapper">
       <router-outlet></router-outlet>
