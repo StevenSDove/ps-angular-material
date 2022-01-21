@@ -1,4 +1,8 @@
-@include '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+.dark-theme {
+  @import '@angular/material/prebuilt-themes/deeppurple-green.css';
+}
 
 // @use '@angular/material' as mat;
 // @include mat.core();
